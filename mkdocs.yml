@@ -1,0 +1,58 @@
+# Nome del sito/documentazione
+site_name: Documentazione Progetto Umanet
+site_url: https://github.com/informistica/umanet_docs
+site_author: Mauro Spinarelli
+site_description: Documentazione per il progetto Umanet
+
+# Tema (Material è uno dei migliori)
+theme:
+  name: material
+  palette:
+    scheme: slate  # Dark mode
+
+# Menu di navigazione della documentazione
+nav:
+  - Home: index.md
+  - Installazione: installation.md
+  - Configurazione: configuration.md
+  - Modelli Django: models.md
+  - Views e API: views.md
+  - Endpoint API: api.md
+  - Applicazioni:
+      - Courses: apps/courses.md
+      - Students: apps/students.md
+      - Social: apps/social.md
+      - Profiles: apps/profiles.md
+      - Report: apps/report.md
+      - Calendar: apps/cal.md
+      - Maps: apps/maps.md
+      - Chat: apps/chat_app.md
+      - ICDL: apps/icdl.md
+      - Quiz: apps/quiz.md
+      - Classroom: apps/classroom.md
+      - Tools: apps/tools.md
+      - AI: apps/ai.md
+      - Games: apps/games.md
+
+# Plugin
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+
+# Estensioni Markdown
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite
+  - footnotes
+  - pymdownx.superfences
+
+# Configurazione Django per documentazione automatica
+extra:
+  django_project_path: "../educa"
+
+# Aggiunta del percorso del progetto Django per `mkdocstrings`
+extra_javascript:
+  - js/config.js
